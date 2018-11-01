@@ -5,6 +5,7 @@
 
 
 def proc_string(value, rep):
+    """ Converts a string to lowercase and replaces al vowels with a specified one. returns nothing"""
     lower = value.lower()
     vowels = "aeiou"
     replaced = lower

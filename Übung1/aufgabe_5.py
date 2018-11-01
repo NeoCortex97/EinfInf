@@ -4,6 +4,8 @@ import sys
 
 
 def sanatize(value):
+    """ Checks if the string contains unwanted characters or to long numbers. returns a list of the numbers."""
+    # Removing spaces is not neccesary, since they are not allowed anyways.
     result = value.replace(" ", "")
     allowed = "0123456789+"
     for c in result:
@@ -19,6 +21,7 @@ def sanatize(value):
 
 
 def add_list(vals):
+    """ Adds a list of numbers passed as parameter. returns an integer"""
     result = 0
     for num in vals:
         result += int(num)

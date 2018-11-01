@@ -8,6 +8,7 @@ from math import factorial as mfactorial
 
 
 def ofactorial(num):
+    """ Calculates the factorial of a positive integer number. returns integer"""
     result = 1
     for i in range(1, num + 1):
         result *= i

@@ -6,6 +6,7 @@ import sys
 
 
 def draw_horizontal_side(length):
+    """ Prints a series of - with specified length. returns nothing"""
     sys.stdout.write(" ")
     for _a in range(int(length)):
         sys.stdout.write("-")
@@ -13,6 +14,7 @@ def draw_horizontal_side(length):
 
 
 def draw_slice(length):
+    """ Prints a slice of the sides. returns nothing"""
     sys.stdout.write("|")
     for _a in range(int(length)):
         sys.stdout.write(" ")
@@ -20,6 +22,7 @@ def draw_slice(length):
 
 
 def rect(a, b):
+    """draws a rectangel with width of a and height of b. returns nothing"""
     draw_horizontal_side(a)
     for _b in range(int(b)):
         draw_slice(a)

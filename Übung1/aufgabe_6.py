@@ -11,6 +11,7 @@ import sys
 
 
 def check_for_invalid_characters(value, allowed):
+    """ Checks if a string contains any unwanted parameters. returns nothing, but stops the program if it finds any"""
     for c in value:
         if c not in allowed:
             print("Invalid input character!\nAborting!")
@@ -19,6 +20,8 @@ def check_for_invalid_characters(value, allowed):
 
 
 def check_for_matching_brackets(value):
+    """ Checks if the bracket expression entered is valid by calculating the difference between opening and closing
+    brackets."""
     level = 0
     for c in value:
         if c == "(":

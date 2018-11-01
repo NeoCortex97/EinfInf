@@ -5,6 +5,7 @@
 # allowed chars: a b c
 
 def print_results(a, b, c):
+    """ Prints the results as a table. returns nothing"""
     print("╒═════╤═════╕")
     print("│count│char│")
     print("╞═════╪═════╡")
@@ -15,6 +16,7 @@ def print_results(a, b, c):
 
 
 def verify_and_count(value):
+    """ Veriefies, that a string contains only as, bs and cs, while counting them. return nothing"""
     count_a = 0
     count_b = 0
     count_c = 0
