@@ -4,7 +4,6 @@
 import sys
 
 
-
 def draw_horizontal_side(length):
     """ Prints a series of - with specified length. returns nothing"""
     sys.stdout.write(" ")
