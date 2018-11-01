@@ -6,13 +6,13 @@
 
 def print_results(a, b, c):
     """ Prints the results as a table. returns nothing"""
-    print("╒═════╤═════╕")
-    print("│count│char│")
-    print("╞═════╪═════╡")
-    print("│{:^5}│".format(a) + " a  │")
-    print("│{:^5}│".format(b) + " b  │")
-    print("│{:^5}│".format(c) + " c  │")
-    print("╘═════╧═════╛")
+    print("╒" + ("═" * 10) + "╤" + ("═" * 10) + "╕")
+    print("│{:^10}│".format("count") + "{:^10}│".format("char"))
+    print("╞" + ("═" * 10) + "╪" + ("═" * 10) + "╡")
+    print("│{:^10}│".format(a) + "{:^10}│".format("a"))
+    print("│{:^10}│".format(b) + "{:^10}│".format("b"))
+    print("│{:^10}│".format(c) + "{:^10}│".format("c"))
+    print("╘" + ("═" * 10) + "╧" + ("═" * 10) + "╛")
 
 
 def verify_and_count(value):
