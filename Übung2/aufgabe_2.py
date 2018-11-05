@@ -18,8 +18,8 @@ def find_pos(string, char):
 
 
 def convert_dictionary(old_dic, new_dic):
-    infile = open(old_dic, "r")
-    outfile = open(new_dic, "w")
+    infile = open(old_dic, "r", encoding="iso8859-15")
+    outfile = open(new_dic, "w", encoding="iso8859-15")
     pc = 0
     current_line = infile.readline()
     while current_line != "":
@@ -37,7 +37,7 @@ def convert_dictionary(old_dic, new_dic):
 
 def find_in_dic(word):
     pos = 0
-    infile = open("dictionary.txt", "r")
+    infile = open("dictionary.txt", "r", encoding="iso8859-15")
     line = infile.readline()
     while line != "":
         if line == word + "\n":
@@ -54,6 +54,7 @@ def main():
         print("YOUR WORD WAS FOUND AT INDEX: " + str(position))
     else:
         print("IM SORRY; BUT  COULD NOT FIND YOUR WORD IN THE CURRENT DICTIONARY....")
+
 
 if __name__ == "__main__":
     #convert_dictionary("de_DE_frami.dic", "dictionary.txt")

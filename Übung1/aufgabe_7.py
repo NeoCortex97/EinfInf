@@ -38,6 +38,7 @@ def find_first_n_primes(number):
 def print_results(numbers, line_length):
     """ Prints a rudimentary table of the results. returns nothing"""
     count = line_length
+    sys.stdout.write("\n|")
     for p in numbers:
         sys.stdout.write("{:^10}|".format(p))
         count -= 1
@@ -51,10 +52,9 @@ def main():
     if int(number) >= 1:
         sys.stdout.write("Working")
         prime_list = find_first_n_primes(int(number))
-        sys.stdout.write("\n|")
         print_results(prime_list, 10)
     else:
-        print("1 is not a valid prime, so there are none!")
+        print("there are no primes")
 
 
 if __name__ == "__main__":
