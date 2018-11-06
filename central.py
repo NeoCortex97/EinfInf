@@ -2,6 +2,7 @@
 import sys
 import os
 import importlib
+import traceback
 
 
 def print_line(line=list(), width=int(), count=int()):
@@ -72,23 +73,32 @@ def format_pattern(pattern):
 
 def import_and_run(pattern, which):
     übung = pattern[int(which[:2]) - 1][0]
-    aufgabe = pattern[int(which[2:]) - 1][int(which[2:])].strip(".py")
+    aufgabe = pattern[int(which[:2]) - 1][int(which[2:])].strip(".py")
     # print("Übung bei " + which[:2] + "ist " + übung)
     # print("aufgabe bei " + which[2:] + "ist " + aufgabe)
-    mod = importlib.import_module(übung + "." + aufgabe)
-    func = getattr(mod, "main")
-    func(**{"basepath":(übung + "/")})
+    try:
+        mod = importlib.import_module(übung + "." + aufgabe)
+        func = getattr(mod, "main")
+        func(**{"basepath": (übung + "/")})
+        del mod
+    except Exception:
+        traceback.print_exc()
 
 
-def process_command(pattern, command):
-    if "help" in command.lower():
+def process_command(pattern, command, width):
+    if command.lower() in "help":
         print("exit     == end program")
         print("help     == print this message")
+        print("list     == list all available programms.")
         print("run XXXX == execute the program of this task")
-    elif "exit" in command.lower():
+    elif command.lower() in "exit":
         return True
     elif "run " in command.lower():
         import_and_run(pattern, command[4:])
+    elif command.lower() in "list":
+        print_table(format_pattern(pattern), width)
+    else:
+        print("You entered an unknown command!\nPlease check syntax.")
     return False
 
 
@@ -105,7 +115,7 @@ def main():
     finish = False
     while not finish:
         command = input("> ")
-        finish = process_command(files, command)
+        finish = process_command(files, command, cell_width)
 
 
 if __name__ == "__main__":
