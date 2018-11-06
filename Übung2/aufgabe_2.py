@@ -9,6 +9,7 @@ import sys
 
 
 def find_pos(string, char):
+    """ returns the index of a char in a string if it is contained. else it returns -1"""
     pos = 0
     for c in string:
         if c == char:
@@ -18,10 +19,14 @@ def find_pos(string, char):
 
 
 def convert_dictionary(old_dic, new_dic):
+    """ Converts a dictionary file to a collection of words"""
+    # The encoding is necessary because the script is encoded in utf-8 and python assumes the opened files are encoded
+    # in utf-8 too
     infile = open(old_dic, "r", encoding="iso8859-15")
     outfile = open(new_dic, "w", encoding="iso8859-15")
     pc = 0
     current_line = infile.readline()
+    # read every line in the file and discard comments and empty lines
     while current_line != "":
         pc += 1
         if pc % 10 == 0:
@@ -36,8 +41,13 @@ def convert_dictionary(old_dic, new_dic):
 
 
 def find_in_dic(word):
+    """ returns the index of a word in the dictionary if it is contained. else it returns -1"""
     pos = 0
-    infile = open("dictionary.txt", "r", encoding="iso8859-15")
+    try:
+        infile = open("dictionary.txt", "r", encoding="iso8859-15")
+    except IOError:
+        convert_dictionary("de_DE_frami.dic", "dictionary.txt")
+        infile = open("dictionary.txt", "r", encoding="iso8859-15")
     line = infile.readline()
     while line != "":
         if line == word + "\n":
@@ -48,14 +58,18 @@ def find_in_dic(word):
 
 
 def main():
-    word = input("[WORT]> ")
-    position = find_in_dic(word)
-    if position != -1:
-        print("YOUR WORD WAS FOUND AT INDEX: " + str(position))
-    else:
-        print("IM SORRY; BUT  COULD NOT FIND YOUR WORD IN THE CURRENT DICTIONARY....")
+    """ Main program to search"""
+    abort = False
+    while not abort:
+        word = input("[WORT]> ")
+        position = find_in_dic(word)
+        if position != -1:
+            print("YOUR WORD WAS FOUND AT INDEX: " + str(position))
+        else:
+            print("IM SORRY; BUT  COULD NOT FIND YOUR WORD IN THE CURRENT DICTIONARY....")
+        if input("[CONTINUE](yes/NO)> ").lower() in "no":
+            abort = True
 
 
 if __name__ == "__main__":
-    #convert_dictionary("de_DE_frami.dic", "dictionary.txt")
     main()

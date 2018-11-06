@@ -8,6 +8,7 @@
 
 
 def is_ascii(value):
+    """ Check if a string contains only ascii chars"""
     for c in value:
         if ord(c) > 127:
             return False
@@ -15,6 +16,7 @@ def is_ascii(value):
 
 
 def cesar(cypher, offset):
+    """ Encode a text with cesar cypher"""
     result = ""
     for c in cypher:
         result += chr((ord(c) + offset) % 128)
@@ -22,6 +24,7 @@ def cesar(cypher, offset):
 
 
 def un_cesar(cypher, offset):
+    """ Decode a cesar cyphered text to plain text"""
     result = ""
     for c in cypher:
         result += chr(abs((ord(c) - offset) % 128))
@@ -29,6 +32,7 @@ def un_cesar(cypher, offset):
 
 
 def main():
+    """ Main program to apply encode and decode functions"""
     task = 0
     while task == 0:
         i = input("[ENCODE OR DECODE]> ").lower()

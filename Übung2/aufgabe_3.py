@@ -4,9 +4,10 @@ import math
 
 
 def cubic_root(w=float(), e=float()):
+    """ Calculate cubic root of float by binary search"""
     left = 0.0
     right = float(w)
-    guessCount = 0
+    guesscount = 0
     tested = float(left + right) / 2.0
     while math.fabs(tested**3-w) >= e:
         if tested**3 < w:
@@ -14,8 +15,8 @@ def cubic_root(w=float(), e=float()):
         else:
             right = tested
         tested = (left + right) / 2.0
-        guessCount += 1
-    return tested, guessCount
+        guesscount += 1
+    return tested, guesscount
 
 
 def main():
