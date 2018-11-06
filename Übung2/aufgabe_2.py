@@ -46,6 +46,7 @@ def find_in_dic(word):
     try:
         infile = open("dictionary.txt", "r", encoding="iso8859-15")
     except IOError:
+        print("PLEASE WAIT! CONVERTING THE DICTIONARY TO A USABLE FORM.\n THIS MAY TAKE a WHILE....")
         convert_dictionary("de_DE_frami.dic", "dictionary.txt")
         infile = open("dictionary.txt", "r", encoding="iso8859-15")
     line = infile.readline()
