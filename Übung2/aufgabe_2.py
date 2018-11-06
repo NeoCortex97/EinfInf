@@ -40,15 +40,15 @@ def convert_dictionary(old_dic, new_dic):
     outfile.close()
 
 
-def find_in_dic(word):
+def find_in_dic(word, prefix=""):
     """ returns the index of a word in the dictionary if it is contained. else it returns -1"""
     pos = 0
     try:
-        infile = open("dictionary.txt", "r", encoding="iso8859-15")
+        infile = open(prefix + "dictionary.txt", "r", encoding="iso8859-15")
     except IOError:
         print("PLEASE WAIT! CONVERTING THE DICTIONARY TO A USABLE FORM.\n THIS MAY TAKE a WHILE....")
-        convert_dictionary("de_DE_frami.dic", "dictionary.txt")
-        infile = open("dictionary.txt", "r", encoding="iso8859-15")
+        convert_dictionary(prefix + "de_DE_frami.dic", "dictionary.txt")
+        infile = open(prefix + "dictionary.txt", "r", encoding="iso8859-15")
     line = infile.readline()
     while line != "":
         if line == word + "\n":
@@ -58,12 +58,16 @@ def find_in_dic(word):
     return -1
 
 
-def main():
+def main(**kwargs):
     """ Main program to search"""
+    print("Enter a german word to search for it in the dictionary.")
     abort = False
     while not abort:
         word = input("[WORT]> ")
-        position = find_in_dic(word)
+        try:
+            position = find_in_dic(word, prefix=kwargs["basepath"])
+        except KeyError:
+            position = find_in_dic(word)
         if position != -1:
             print("YOUR WORD WAS FOUND AT INDEX: " + str(position))
         else:

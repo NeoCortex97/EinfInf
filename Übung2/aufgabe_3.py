@@ -19,7 +19,8 @@ def cubic_root(w=float(), e=float()):
     return tested, guesscount
 
 
-def main():
+def main(**kwargs):
+    print("Enter a float for the number and a float for the quality to calculate the cubic root of the number.")
     value = float(input("[INPUT W]> "))
     quality = float(input("[INPUT EPSILON]> "))
     print(cubic_root(value, quality))

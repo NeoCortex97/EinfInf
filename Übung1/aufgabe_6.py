@@ -36,7 +36,8 @@ def check_for_matching_brackets(value):
         print("Missing \"(\" was detected!")
 
 
-def main():
+def main(**kwargs):
+    print("Enter a bracket expression to check if the brackets match")
     text = input("[EXPRESSION]> ")
     check_for_invalid_characters(text, "()")
     check_for_matching_brackets(text)

@@ -28,5 +28,10 @@ def rect(a, b):
     draw_horizontal_side(a)
 
 
-if __name__ == "__main__":
+def main(**kwargs):
+    print("Enter the height and width to draw a rectangle.")
     rect(input("[WIDTH]> "), input("[HEIGHT]> "))
+
+
+if __name__ == "__main__":
+    main()

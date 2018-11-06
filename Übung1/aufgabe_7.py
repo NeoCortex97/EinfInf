@@ -45,9 +45,11 @@ def print_results(numbers, line_length):
         if count == 0:
             sys.stdout.write("\n|")
             count = line_length
+    sys.stdout.write("\n")
 
 
-def main():
+def main(**kwargs):
+    print("Enter a number to print the entered amount of prime numbers.")
     number = input("[NUMBER]> ")
     if int(number) >= 1:
         sys.stdout.write("Working")

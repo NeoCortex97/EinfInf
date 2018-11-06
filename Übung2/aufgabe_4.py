@@ -50,8 +50,9 @@ def dec_to_bin(value):
     return None
 
 
-def main():
+def main(**kwargs):
     """ Main program to execute the functions"""
+    print("Lets you encode or decode a number between binary and decimal representation.")
     command = ""
     last = ""
     while command.lower() != "quit":

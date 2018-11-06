@@ -4,6 +4,7 @@
 # input: string
 # allowed chars: a b c
 
+
 def print_results(a, b, c):
     """ Prints the results as a table. returns nothing"""
     print("╒" + ("═" * 10) + "╤" + ("═" * 10) + "╕")
@@ -33,5 +34,10 @@ def verify_and_count(value):
     print_results(count_a, count_b, count_c)
 
 
-if __name__ == "__main__":
+def main(**kwargs):
+    print("Enter a string of as, bs and cs to count them.")
     verify_and_count(input("[STRING]> "))
+
+
+if __name__ == "__main__":
+    main()

@@ -15,7 +15,12 @@ def ofactorial(num):
     return result
 
 
-if __name__ == "__main__":
+def main(**kwargs):
+    print("This calculates the factorial of an integer.")
     to_compute = int(input("[EINGABE]> "))
     print("Own  Faculty: " + str(ofactorial(to_compute)))
     print("Math Faculty: " + str(mfactorial(to_compute)))
+
+
+if __name__ == "__main__":
+    main()

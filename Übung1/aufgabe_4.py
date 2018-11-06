@@ -16,5 +16,10 @@ def proc_string(value, rep):
     print("REPLACED:  " + replaced)
 
 
-if __name__ == "__main__":
+def main(**kwargs):
+    print("Enter a string and a vowel and replace all vowels with the entered one.")
     proc_string(input("[STRING]> "), input("[VOWEL]> "))
+
+
+if __name__ == "__main__":
+    main()

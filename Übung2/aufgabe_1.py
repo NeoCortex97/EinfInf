@@ -6,6 +6,9 @@
 # Part D: use the functions to write a program which asks if a string should be encoded or decoded and
 #         outputs the processed string
 
+# Notice: der parameter **kwargs ist im pattern für python Dateien bei mir verankert und hauptsächlich vorhanden um
+#         gegebenenfalls auch mit daten aus einem anderen Verzeichnis testen zu können.
+
 
 def is_ascii(value):
     """ Check if a string contains only ascii chars"""
@@ -31,8 +34,9 @@ def un_cesar(cypher, offset):
     return result
 
 
-def main():
+def main(**kwargs):
     """ Main program to apply encode and decode functions"""
+    print("Lets you encode or decode a string with cesar cypher.")
     task = 0
     while task == 0:
         i = input("[ENCODE OR DECODE]> ").lower()

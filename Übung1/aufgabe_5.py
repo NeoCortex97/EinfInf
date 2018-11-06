@@ -28,7 +28,8 @@ def add_list(vals):
     return result
 
 
-def main():
+def main(**kwargs):
+    print("Enter a addition term to print the sum of the numbers")
     numbers = sanatize(input("[TERM]> "))
     print("THE SUM OF THE TERM IS: " + str(add_list(numbers)))
 
