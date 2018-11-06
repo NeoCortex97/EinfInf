@@ -24,7 +24,7 @@ def cesar(cypher, offset):
 def un_cesar(cypher, offset):
     result = ""
     for c in cypher:
-        result += chr((ord(c) - offset) % 128)
+        result += chr(abs((ord(c) - offset) % 128))
     return result
 
 
