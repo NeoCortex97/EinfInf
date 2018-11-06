@@ -2,7 +2,7 @@
 # Write a function which transforms decimal number to binary
 
 
-def checkChars(text="", allowed=""):
+def check_chars(text="", allowed=""):
     result = True
     for c in text:
         if c not in allowed:
@@ -10,8 +10,8 @@ def checkChars(text="", allowed=""):
     return result
 
 
-def binToDec(text=""):
-    if checkChars(text, "10") and len(text) > 0:
+def bin_to_dec(text=""):
+    if check_chars(text, "10") and len(text) > 0:
         place = 0
         result = 0
         for c in reversed(text):
@@ -21,25 +21,25 @@ def binToDec(text=""):
     return None
 
 
-def findPlaceCount(number):
+def find_place_count(number):
     exp = 0
     while 2 ** (exp + 1) < number:
         exp += 1
     return exp
 
 
-def decToBin(value):
-    if checkChars(value, "0123456789") and len(value) > 0:
-        decnum = int(value)
-        if decnum == 0:
+def dec_to_bin(value):
+    if check_chars(value, "0123456789") and len(value) > 0:
+        decimal = int(value)
+        if decimal == 0:
             return "0"
         else:
-            nums = findPlaceCount(decnum)
+            nums = find_place_count(decimal)
             result = ""
             for pos in range(nums + 1):
-                if decnum - (2 ** (nums - pos)) >= 0:
+                if decimal - (2 ** (nums - pos)) >= 0:
                     result += "1"
-                    decnum = decnum - (2 ** (nums - pos))
+                    decimal = decimal - (2 ** (nums - pos))
                 else:
                     result += "0"
             return result
@@ -47,20 +47,20 @@ def decToBin(value):
 
 
 def main():
-    comand = ""
+    command = ""
     last = ""
-    while comand.lower() != "quit":
-        comand = input("[COMAND] quit/decode/ENCODE > ")
-        if comand.lower() in "encode":
+    while command.lower() != "quit":
+        command = input("[COMMAND] quit/decode/ENCODE > ")
+        if command.lower() in "encode":
             i = input("[INPUT](leave blank to use last value)>")
             if i != "":
                 last = i
-            print(str(last) + " in  binary is " + decToBin(last))
-        elif comand.lower() in "decode":
+            print(str(last) + " in  binary is " + dec_to_bin(last))
+        elif command.lower() in "decode":
             i = input("[INPUT](leave blank to use last value)>")
             if i != "":
                 last = i
-            print(str(last) + " in deimal is " + binToDec(last))
+            print(str(last) + " in deimal is " + bin_to_dec(last))
 
 
 if __name__ == "__main__":
