@@ -11,15 +11,6 @@ import sys
 from util_functions import *
 
 
-def check_for_invalid_characters(value, allowed):
-    """ Checks if a string contains any unwanted parameters. returns nothing, but stops the program if it finds any"""
-    if test_alphabet(value, allowed):
-        print("Input contains no invalid characters.")
-    else:
-        print("Invalid input character!\nAborting!")
-        sys.exit(-1)
-
-
 def check_for_matching_brackets(value):
     """ Checks if the bracket expression entered is valid by calculating the difference between opening and closing
     brackets."""
@@ -40,8 +31,11 @@ def check_for_matching_brackets(value):
 def main(**kwargs):
     print("Enter a bracket expression to check if the brackets match")
     text = input("[EXPRESSION]> ")
-    check_for_invalid_characters(text, "()")
-    check_for_matching_brackets(text)
+    if test_alphabet(text, "()"):
+        print("Input contains no invalid characters")
+        check_for_matching_brackets(text)
+    else:
+        print("Input contains invalid characters!\nAborting!")
 
 
 if __name__ == "__main__":
