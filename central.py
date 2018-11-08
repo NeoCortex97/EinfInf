@@ -5,8 +5,8 @@ import importlib
 import traceback
 
 
-def print_line(line=list(), width=int(), count=int()):
-    sys.stdout.write("\x1B[31;2m│")
+def print_line(line=list(), width=int(), count=int(), offset=0):
+    sys.stdout.write((" " * offset) + "\x1B[31;2m│")
     for i in range(count):
         if i < len(line):
             sys.stdout.write(("\x1B[33;1m{:^" + str(width) + "}").format(line[i]) + "\x1B[31;22m│\x1B[0m")
@@ -20,17 +20,17 @@ def longest_entry(array):
     for a in array:
         if result < len(a):
             result = len(a)
-    return  result
+    return result
 
 
-def print_table(lines, width):
+def print_table(lines, width, offset=0):
     count = longest_entry(lines)
-    print("\x1B[31;2m╒" + ("═" * width) + (("╤" + ("═" * width)) * (count - 1)) + "╕\x1B[0m")
-    print_line(lines[0], width, count)
+    print((" " * offset) + "\x1B[31;2m╒" + ("═" * width) + (("╤" + ("═" * width)) * (count - 1)) + "╕\x1B[0m")
+    print_line(lines[0], width, count, offset)
     for i in range(1, len(lines)):
-        print("\x1B[31;2m╞" + ("═" * width) + (("╪" + ("═" * width)) * (count - 1)) + "╡\x1B[0m")
-        print_line(lines[i], width, count)
-    print("\x1B[2;31m╘" + ("═" * width) + (("╧" + ("═" * width)) * (count - 1)) + "╛\x1B[0m")
+        print((" " * offset) + "\x1B[31;2m╞" + ("═" * width) + (("╪" + ("═" * width)) * (count - 1)) + "╡\x1B[0m")
+        print_line(lines[i], width, count, offset)
+    print((" " * offset) + "\x1B[2;31m╘" + ("═" * width) + (("╧" + ("═" * width)) * (count - 1)) + "╛\x1B[0m")
 
 
 def get_path_contents(path, pattern):
@@ -85,37 +85,71 @@ def import_and_run(pattern, which):
         traceback.print_exc()
 
 
-def process_command(pattern, command, width):
+def print_logo(text="", offset=0, borderwidth=4, blockheight=3, centerwidth=20, spacerheight=1):
+    blockwidth = (2 * borderwidth) + centerwidth
+    lineborder = ("#" * borderwidth)
+    topblock = (((" " * offset) + ("#" * blockwidth) + "\n") * blockheight)
+    bottomblock = (("\n" + (" " * offset) + ("#" * blockwidth)) * blockheight)
+    centerline = (" " * offset) + lineborder + ("{:^" + str(centerwidth) + "}").format(text) + lineborder
+    spacerline = (" " * offset) + lineborder + (" " * centerwidth) + lineborder
+    centerblock = ((spacerline + "\n") * spacerheight) + centerline + (("\n" + spacerline) * spacerheight)
+    print(topblock + centerblock + bottomblock)
+
+
+def print_help(offset=0):
+    command_list = ["exit", "help", "list", "run XXXX",
+                    "logo <border width> <block height> <center width> <spacer height> <text>"]
+    desciption_list = ["end program", "print this message", "list all assailable programs",
+                       "execute the program of this task", "print a logo with the parameter"]
+    help_pattern = "\x1B[32;1m{0:" + str(longest_entry(command_list)) + "}\x1B[22;32m == \x1B[32;1m{1:32}\x1B[0m"
+    print((" " * offset) + help_pattern.format(command_list[0], desciption_list[0]))
+    print((" " * offset) + help_pattern.format(command_list[1], desciption_list[1]))
+    print((" " * offset) + help_pattern.format(command_list[2], desciption_list[2]))
+    print((" " * offset) + help_pattern.format(command_list[3], desciption_list[3]))
+    print((" " * offset) + help_pattern.format(command_list[4], desciption_list[4]))
+
+
+def stringify(data=list()):
+    result = ""
+    for s in data:
+        result += s + " "
+    return result
+
+
+def process_command(pattern, command, width, offset=0):
     if command.lower() in "help":
-        print("exit     == end program")
-        print("help     == print this message")
-        print("list     == list all available programms.")
-        print("run XXXX == execute the program of this task")
+        print_help(offset)
     elif command.lower() in "exit":
+        print((" " * offset) + "\x1B[33;1mOkay, Bye!\x1B[0m")
         return True
     elif "run " in command.lower():
         import_and_run(pattern, command[4:])
     elif command.lower() in "list":
-        print_table(format_pattern(pattern), width)
+        print_table(format_pattern(pattern), width, offset)
+    elif "logo " in command.lower():
+        params = command.split()[1:]
+        print_logo(stringify(params[4:]), offset, int(params[0]), int(params[1]), int(params[2]), int(params[3]))
     else:
-        print("You entered an unknown command!\nPlease check syntax.")
+        print((" " * offset) + "\x1B[31;1mYou entered an unknown command!\x1B[0m\n" + (" " * offset) +
+              "\x1B[32;1mPlease check syntax.\x1B[0m")
     return False
 
 
 def main():
-    print("Homework browser")
     cell_width = 15
+    offset = 5
+    print_logo("Homework browser", offset * 4, centerwidth=50)
     # lines = [["Übung", "Aufgabe 1", "Aufgabe 2", "Aufgabe 3", "Aufgabe 4", "Aufgabe 5", "Aufgabe 6", "Aufgabe 7"],
     #          [" 1", "0101", "0102", "0103", "0104", "0105", "0106", "0107"],
     #          [" 2", "0201", "0202", "0203", "0204"], [" 3"], [" 4"], [" 5"],
     #          [" 6"], [" 7"], [" 8"], [" 9"], ["10"], ["11"], ["12"]]
     files = get_pattern_from_filesystem(".", "Übung", "aufgabe_")
     lines = format_pattern(files)
-    print_table(lines, cell_width)
+    print_table(lines, cell_width, offset)
     finish = False
     while not finish:
-        command = input("> ")
-        finish = process_command(files, command, cell_width)
+        command = input("\x1B[32;1m> \x1B[0m")
+        finish = process_command(files, command, cell_width, offset)
 
 
 if __name__ == "__main__":
