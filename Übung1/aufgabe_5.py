@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Write a program that processes a sum from a string
 import sys
+from util_functions import *
 
 
 def sanatize(value):
@@ -8,10 +9,9 @@ def sanatize(value):
     # Removing spaces is not neccesary, since they are not allowed anyways.
     result = value.replace(" ", "")
     allowed = "0123456789+"
-    for c in result:
-        if c not in allowed:
-            print("unknown characters detected!\nAborting!")
-            sys.exit(-1)
+    if not test_alphabet(result, allowed):
+        print("Input contains unwanted characters!")
+        sys.exit(-1)
     nums = result.split("+")
     for n in nums:
         if len(n) != 1:

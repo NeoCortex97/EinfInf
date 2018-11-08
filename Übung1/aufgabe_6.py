@@ -8,15 +8,16 @@
 # Input: string
 # Output: result of the checks
 import sys
+from util_functions import *
 
 
 def check_for_invalid_characters(value, allowed):
     """ Checks if a string contains any unwanted parameters. returns nothing, but stops the program if it finds any"""
-    for c in value:
-        if c not in allowed:
-            print("Invalid input character!\nAborting!")
-            sys.exit(-1)
-    print("Input contains no invalid characters.")
+    if test_alphabet(value, allowed):
+        print("Input contains no invalid characters.")
+    else:
+        print("Invalid input character!\nAborting!")
+        sys.exit(-1)
 
 
 def check_for_matching_brackets(value):
