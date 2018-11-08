@@ -6,12 +6,12 @@ import traceback
 
 
 def print_line(line=list(), width=int(), count=int()):
-    sys.stdout.write("│")
+    sys.stdout.write("\x1B[31;2m│")
     for i in range(count):
         if i < len(line):
-            sys.stdout.write(("{:^" + str(width) + "}").format(line[i]) + "│")
+            sys.stdout.write(("\x1B[33;1m{:^" + str(width) + "}").format(line[i]) + "\x1B[31;22m│\x1B[0m")
         else:
-            sys.stdout.write(("{:^" + str(width) + "}").format(" ") + "│")
+            sys.stdout.write(("{:^" + str(width) + "}").format(" ") + "\x1B[31m│\x1B[0m")
     sys.stdout.write("\n")
 
 
@@ -25,12 +25,12 @@ def longest_entry(array):
 
 def print_table(lines, width):
     count = longest_entry(lines)
-    print("╒" + ("═" * width) + (("╤" + ("═" * width)) * (count - 1)) + "╕")
+    print("\x1B[31;2m╒" + ("═" * width) + (("╤" + ("═" * width)) * (count - 1)) + "╕\x1B[0m")
     print_line(lines[0], width, count)
     for i in range(1, len(lines)):
-        print("╞" + ("═" * width) + (("╪" + ("═" * width)) * (count - 1)) + "╡")
+        print("\x1B[31;2m╞" + ("═" * width) + (("╪" + ("═" * width)) * (count - 1)) + "╡\x1B[0m")
         print_line(lines[i], width, count)
-    print("╘" + ("═" * width) + (("╧" + ("═" * width)) * (count - 1)) + "╛")
+    print("\x1B[2;31m╘" + ("═" * width) + (("╧" + ("═" * width)) * (count - 1)) + "╛\x1B[0m")
 
 
 def get_path_contents(path, pattern):
