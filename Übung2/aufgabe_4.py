@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 # Write a function which transforms decimal number to binary
-from util_functions import *
+
+
+def test_alphabet(text="", alphabet=""):
+    for c in text:
+        if c not in alphabet:
+            return False
+    return True
 
 
 def bin_to_dec(text=""):
