@@ -2,18 +2,16 @@
 # Write a function which transforms decimal number to binary
 
 
-def check_chars(text="", allowed=""):
-    """ Checks string for invalid characters"""
-    result = True
+def test_alphabet(text="", alphabet=""):
     for c in text:
-        if c not in allowed:
-            result = False
-    return result
+        if c not in alphabet:
+            return False
+    return True
 
 
 def bin_to_dec(text=""):
     """ decodes binary number to decimal"""
-    if check_chars(text, "10") and len(text) > 0:
+    if test_alphabet(text, "10") and len(text) > 0:
         place = 0
         result = 0
         for c in reversed(text):
@@ -33,7 +31,7 @@ def find_place_count(number):
 
 def dec_to_bin(value):
     """ Encodes a decimal number to binary"""
-    if check_chars(value, "0123456789") and len(value) > 0:
+    if test_alphabet(value, "0123456789") and len(value) > 0:
         decimal = int(value)
         if decimal == 0:
             return "0"
@@ -50,8 +48,9 @@ def dec_to_bin(value):
     return None
 
 
-def main():
+def main(**kwargs):
     """ Main program to execute the functions"""
+    print("Lets you encode or decode a number between binary and decimal representation.")
     command = ""
     last = ""
     while command.lower() != "quit":
