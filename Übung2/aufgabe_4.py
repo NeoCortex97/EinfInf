@@ -64,7 +64,7 @@ def main(**kwargs):
             i = input("[INPUT](leave blank to use last value)>")
             if i != "":
                 last = i
-            print(str(last) + " in deimal is " + bin_to_dec(last))
+            print(str(last) + " in deimal is " + str(bin_to_dec(last)))
 
 
 if __name__ == "__main__":
