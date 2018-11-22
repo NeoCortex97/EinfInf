@@ -42,7 +42,7 @@ def get_path_contents(path, pattern):
     return result
 
 
-def get_pattern_from_filesystem(basepath, first_key, second_key, extra_key):
+def get_pattern_from_filesystem(basepath, first_key, second_key, extra_key=""):
     dirs = get_path_contents(basepath, first_key)
     result = list()
     for d in dirs:
