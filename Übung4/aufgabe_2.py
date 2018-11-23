@@ -1,6 +1,6 @@
-def printInfix(tree=[]):
+def infix(tree=[]):
     if len(tree) == 3:
-        if isinstance(tree[1], str):
+        if isinstance(tree[1], str) and tree[1] in "+-*/" and len(tree[1]) == 1:
             if isinstance(tree[0], int):
                 a = str(tree[0])
             else:
@@ -17,9 +17,9 @@ def printInfix(tree=[]):
         return None
 
 
-def printPrefix(tree=[]):
+def prefix(tree=[]):
     if len(tree) == 3:
-        if isinstance(tree[1], str):
+        if isinstance(tree[1], str) and tree[1] in "+-*/" and len(tree[1]) == 1:
             if isinstance(tree[0], int):
                 a = str(tree[0])
             else:
@@ -36,9 +36,9 @@ def printPrefix(tree=[]):
         return None
 
 
-def printPostfix(tree=[]):
+def postfix(tree=[]):
     if len(tree) == 3:
-        if isinstance(tree[1], str):
+        if isinstance(tree[1], str) and tree[1] in "+-*/" and len(tree[1]) == 1:
             if isinstance(tree[0], int):
                 a = str(tree[0])
             else:
@@ -58,9 +58,9 @@ def printPostfix(tree=[]):
 
 
 def main():
-    print(printInfix([1, "+", [1, "-", 3]]))
-    print(printPrefix([1, "+", [1, "-", 3]]))
-    print(printPostfix([1, "+", [1, "-", 3]]))
+    print(infix([1, "+", [1, "-", 3]]))
+    print(prefix([1, "+", [1, "-", 3]]))
+    print(postfix([1, "+", [1, "-", 3]]))
 
 
 if __name__ == "__main__":
