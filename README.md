@@ -12,18 +12,18 @@ Vor der Abgabe wählen wir die beste Lösung aus und Mergen den Branch des Teiln
 
 ## Git Anleitung  
 * repository kopieren:
-  1. git clone <URL>  
+  1. ```bash git clone <URL>```    
 * Branch wechseln mit:  
-  1. git checkout <baranch name>  
+  1. ```bash git checkout <baranch name>```  
 * Änderungen speichern / Branch adden mit:
-  1. git add <datei>
-  2. git commit -m <message>
+  1. ```bash git add <datei>```
+  2. ```bash git commit -m <message>```
 * Ordner zwischen branches verschieben:
-  1. git checkout <ziel branch>
-  2. git checkout <quell branch> -- <Ordnername>
-  3. git add <Ordnername>
-  4. git commit -m "<Nachricht>"
+  1. ```bash git checkout <ziel branch>```
+  2. ```bash git checkout <quell branch> -- <Ordnername>```
+  3. ```bash git add <Ordnername>```
+  4. ```bash git commit -m "<Nachricht>"```
 * pushen:
-  1. git push
+  1. ```bash git push```
 * pullen 
-  1. git pull
+  1. ```bash git pull```
