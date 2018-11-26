@@ -1,4 +1,7 @@
-
+# -*- coding: utf-8 -*-
+# Stefan Schmelz Mat.Nr.: 35221810
+# Ingo Kehres    Mat.Nr.: 33318235
+# Siamak Najafi  Mat-Nr.: 33397081
 
 def readWallet(vals=[]):
     print("Wie sieht dein Geldbeutel aus?")
