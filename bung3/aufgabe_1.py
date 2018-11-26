@@ -1,1 +1,12 @@
 
+# -*- coding: utf-8 -*-
+# Stefan Schmelz Mat.Nr.: 35221810
+# Ingo Kehres    Mat.Nr.: 33318235
+# Siamak Najafi  Mat-Nr.: 33397081
+
+
+def main(**kwargs):
+    pass
+
+if __name__ == "__main__":
+main()
