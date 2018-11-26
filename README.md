@@ -12,9 +12,9 @@ Vor der Abgabe wählen wir die beste Lösung aus und Mergen den Branch des Teiln
 
 ## Git Anleitung  
 * repository kopieren:
-  1. ```bash git clone <URL>```    
+  1. ``` bash git clone <URL>```    
 * Branch wechseln mit:  
-  1. ```bash git checkout <baranch name>```  
+  1. ``` bash git checkout <barnch name>```  
 * Änderungen speichern / Branch adden mit:
   1. ```bash git add <datei>```
   2. ```bash git commit -m <message>```
