@@ -4,14 +4,6 @@
 # Siamak Najafi  Mat-Nr.: 33397081
 
 
-<<<<<<< Updated upstream
-
-def main(**kwargs):
-    pass
-
-if __name__ == "__main__":
-	main()
-=======
 def filter_paindrom(data=list()):
     return [s for s in data if s != s[::-1]]
 
@@ -71,4 +63,4 @@ def main(**kwargs):
 
 if __name__ == "__main__":
     main()
->>>>>>> Stashed changes
+
