@@ -1,0 +1,8 @@
+a)
+    i)   g(x) element O(f(x)), weil man die 7 von 7n vernachlässigen kann.
+    ii)  g(x) element O(f(x)), für c=2 und n0=100
+    iii) g(x) element O(f(x))
+b)
+    i)   n0 = 20
+    ii)  n0 = 230
+    iii) n0 = 21
