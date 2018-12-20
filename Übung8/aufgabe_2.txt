@@ -1,0 +1,40 @@
+Aufgabe 2:
+
+def loese(n):
+	if n == 0 or n == 2:
+		return True
+	elif n == 1:
+		return False
+	else:
+		return not loese(n-1) or not loese(n-2) or not loese(n-3)
+
+
+a)
+
+Wie ist die Laufzeit des Programms? Wie lauten passende Rekurrenzgleichungen?
+
+    t0 = 2
+    t1 = 3
+    t2 = 2
+    tn = 6 + t(n-1) + t(n-2) + t(n-3)           falls n >= 3
+
+
+b) Geben Sie ein vereinfachtes System an, und begründen Sie Ihre Abschätzungen. Geben Sie eine geschlossene Form für Ihr neues System an.
+    Ersetze konstante Schrittzahlen (in O(1)) durch c:
+    t0 = c
+    t1 = c
+    t2 = c
+    tn = c + t(n-1) + t(n-2) + t(n-3)
+
+    es gilt, dass t(n-19) >= t(n-2)
+    t(n) = c + t(n-1) + t(n-2) + t(n-3) <= c + t(n-1) + t(n-1) + t(n-1) = c + 3t(n-1)
+
+
+    t'n = c                 falls n <= 3
+    t'n = c + 3t(n-1)       falls n >= 3
+
+
+c) Beweisen Sie die Korrektheit der geschlossenen Form mittels Induktion. Schließen Sie geeignet auf die worst-case-Laufzeit von loese(n)
+
+    t'n = c * (3^(n) - 1)
+    t'n+1 = c + 3t'n = IH c + 3c*(3^n - 1) => wzbw

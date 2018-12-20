@@ -1,0 +1,89 @@
+Aufgabe 3
+
+
+a)
+
+Rekurrenzgleichungen für i)
+    t1 = 1
+    t2 = c + 2*t1
+    tn = c + t1 + t(n-2)            falls n >= 3
+
+Rekurrenzgleichungen für ii)
+    t1 = 1
+    t2 = c + 2*t1
+    tn = c + 2*t(n/2)               falls n >= 3
+
+Rekurrenzgleichungen für iii)
+    t1 = 1
+    t2 = c + t1
+    tn = c + 2tn - 1
+
+Rekurrenzgleichungen für iv)
+    t1 = 1
+    t2 = 1
+    tn = c + 2*t(n-1)
+
+b) 
+
+Geschlossene Form + Begründung für i)
+    tn = n
+    nur der gewinner kommt weiter, also muss man die verlierer nicht weiter testen. Also müssen nur so viele vergleiche durchgeführt werden, wie es spieler gibt.
+
+Geschlossene Form + Begründung für ii)
+    tn = log2(n)
+    in jeder Runde gibt es nur halb so viele teilnehmer wie in der Runde davor. Also müssen immer nur halb so viele vergleiche durchgeführt werden.
+
+Geschlossene Form + Begründung für iii)
+    tn = 2n - 1
+    jeder muss gegen a und gegen b spielen, da es egal ist ob a gegeb b oder b gegen a spielt müssen nicht ganz 2n durchläufe gemacht werden.
+
+Geschlossene Form + Begründung für iv)
+    tn = n^2
+
+
+
+
+
+c)
+
+Turnierdauer bei 32 Teilnehmern für i)
+    32 Minuten => 0.516666 Stunden =>
+
+Turnierdauer bei 32 Teilnehmern für ii)
+    16 Minuten
+
+Turnierdauer bei 32 Teilnehmern für iii)
+    63 Minuten
+
+Turnierdauer bei 32 Teilnehmern für iv)
+    2147483647 Minuten
+        => 35791394.11 Stunden
+        => 1491309.088 Tage
+        => 213044.012 Wochen
+        => 53261.003 Monate
+        => 4438.416 Jahre
+        => 443.841 Jahrzehnte
+        => 44.384 Jahrhunderte
+        => 4.438 Jahrtausende
+
+
+d) (Sternchen) (Jeweils mit kurzer Begründung)
+
+Turnierdauer in Abhängigkeit von n für i)
+    32 Minuten. Da jede runde von der runde davor abhängig ist, kann man nur eine paralell spielen
+
+
+Turnierdauer in Abhängigkeit von n für ii)
+    4 Minuten. Da in einer Stufe jeweils alle spiele gleichzeitig laufen können
+
+
+Turnierdauer in Abhängigkeit von n für iii)
+    16 Minuten, da immer zwei spiele gleichzeitig laufen können
+
+
+Turnierdauer in Abhängigkeit von n für iv)
+    1073741823,5 Minuten, da beide Teiltuniere paralell laufen können
+
+
+
+

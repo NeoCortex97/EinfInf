@@ -1,0 +1,124 @@
+Aufgabe 1:
+
+a)
+
+Programm:
+def programm1(n):  # Eingabegroesse: n
+	if n < 2:
+		return False
+	divisor = 2
+	while divisor * 2 < n:
+		divisor += 1
+		if n % divisor == 0:
+			return False
+	return True
+
+
+Ihre Loesung:
+
+Das Programm berechnet die Funktion:
+    Das Programm prüft, ob eine zahl eine Primzahl ist.
+    Hat die Eingabegröße n einen teiler in den ganzen Zahlen gibt sie False zurück.
+    anderenfalls True.
+
+Best Case:
+    Im best case ist die Laufzeit O(1).
+
+
+
+Worst Case:
+    Im worst case ist die Laufzeit O(0.5n).
+
+
+
+b)
+
+Programm: 
+def programm2(n):  # Eingabegroesse: n
+	i = 0
+	while i <= n:
+		i += 1
+		if i ** 2 > 0:
+			 break
+	return i
+
+Ihre Loesung:
+
+Das Programm berechnet die Funktion:
+    Daas Programm gibt 1 zurück, wenn n größer oder gleich 0 ist.
+    sonst gibt es 0 zurück.
+
+
+Best Case:
+    O(1)
+
+
+
+Worst Case:
+    O(3)
+
+
+
+c) 
+
+Programm:
+def programm3(L):  # Eingabegroesse: len(L)
+	  for i in range(len(L)):
+		sortiert = True
+	  	for j in range(1,len(L)-i):
+	  		if L[j] < L[j-1]:
+	  			L[j], L[j-1] = L[j-1], L[j]
+	  			sortiert = False
+		if sortiert == True:
+		      break
+	  return L
+
+Ihre Loesung:
+
+Das Programm berechnet die Funktion:
+    Das programm sortiert eine Liste mit bubble sort.
+
+
+
+Best Case:
+    O(len(L))
+
+
+
+Worst Case:
+    O(len(L)^2)
+
+
+
+
+d)
+
+def programm4(n):  # Eingabegroesse: n
+	i = 1
+	for j in range(n):
+		i *= 2
+	j = 1
+	for k in range(i):
+		k *= 2
+	return k
+
+
+Ihre Loesung:
+
+Das Programm berechnet die Funktion:
+    f(n) = 2^(2^n) falls n > 0
+    sonst f(n) = 0
+
+
+Best Case:
+    O(3)
+
+
+
+Worst Case:
+    O(n + n^2)
+
+
+
+
+
