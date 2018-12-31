@@ -20,7 +20,7 @@ def cond_zwei(height=float()):
 def min_pos(*args):
     result = args[0]
     for v in args:
-        if v > 0 and v < result:
+        if 0 < v < result:
             result = v
     return result
 
@@ -28,20 +28,13 @@ def min_pos(*args):
 def get_smallest_tree(height=float()):
     rule1, calculated1 = cond_eins(height)
     rule2, calculated2 = cond_zwei(height)
-    if rule1 < height:
-        result1 = rule1
-    else:
-        result1 = rule1
 
-    if rule2 < height:
-        result2 = rule2
+    if not (calculated1 and calculated2):
+        print(rule1, rule2, calculated2 or calculated1)
+        return min(rule1, rule2)
     else:
-        result2 = height
-
-    if calculated1 or calculated2:
-        return min(get_smallest_tree(result1), get_smallest_tree(result2))
-    else:
-        return min(result1, result2)
+        extra = get_smallest_tree(max(rule1, rule2))
+        return min(rule1, rule2, extra)
 
     # tmp1, tmp2 = get_smallest_tree(rule1)
     # tmp3, tmp4 = get_smallest_tree(rule2)
