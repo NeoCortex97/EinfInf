@@ -29,7 +29,7 @@ def verify_and_count(value):
             count_b += 1
         elif c == "c":
             count_c += 1
-        elif d == "d":
+        elif c == "d":
             count_d += 1
         else:
             print("How dare you enter invalid characters :-)")
