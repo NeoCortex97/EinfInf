@@ -12,7 +12,7 @@ def print_results(a, b, c, d):
     print("│{:^10}│".format(a) + "{:^10}│".format("a"))
     print("│{:^10}│".format(b) + "{:^10}│".format("b"))
     print("│{:^10}│".format(c) + "{:^10}│".format("c"))
-     print("│{:^10}│".format(d) + "{:^10}│".format("d"))
+    print("│{:^10}│".format(d) + "{:^10}│".format("d"))
     print("╘" + ("═" * 10) + "╧" + ("═" * 10) + "╛")
 
 
