@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f079b39-d12c-422b-a72f-e865fefcf28e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Extras/sudoku.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Übung7/aufgabe_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Übung7/aufgabe_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Übung7/aufgabe_3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Übung8/aufgabe_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Übung8/aufgabe_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Übung8/aufgabe_3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Übung8/spiele.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Übung9/aufgabe_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Übung9/aufgabe_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Übung9/aufgabe_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <ignored mask="Blatt*" />
@@ -21,18 +17,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Extras/sudoku.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Übung9/aufgabe_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="117" selection-start-line="117" selection-end-line="117" />
+            <state>
+              <caret column="4" selection-start-column="4" selection-end-column="4" />
+              <folding>
+                <element signature="e#16#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Extras/Sudoku_1.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Übung9/aufgabe_3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -76,6 +79,9 @@
         <option value="$PROJECT_DIR$/Übung8/spiele.py" />
         <option value="$PROJECT_DIR$/Übung8/aufgabe_3.txt" />
         <option value="$PROJECT_DIR$/Extras/sudoku.py" />
+        <option value="$PROJECT_DIR$/Übung9/aufgabe_2.py" />
+        <option value="$PROJECT_DIR$/Übung9/aufgabe_1.py" />
+        <option value="$PROJECT_DIR$/Übung9/aufgabe_3.py" />
       </list>
     </option>
   </component>
@@ -85,31 +91,10 @@
     <option name="height" value="1044" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="EinfInf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EinfInf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EinfInf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EinfInf" type="462c0819:PsiDirectoryNode" />
-              <item name="Extras" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EinfInf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EinfInf" type="462c0819:PsiDirectoryNode" />
-              <item name="Übung8" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -121,6 +106,22 @@
               <item name="EinfInf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="Übung5" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="EinfInf" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Übung9" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EinfInf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EinfInf" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -155,7 +156,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sudoku">
+  <component name="RunManager" selected="Python.aufgabe_3 (1)">
+    <configuration name="aufgabe_1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="EinfInf" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Übung9" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Übung9/aufgabe_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="aufgabe_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="EinfInf" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,7 +199,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="aufgabe_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="aufgabe_3 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="EinfInf" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -185,32 +207,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Übung7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Übung9" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Übung7/aufgabe_2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="aufgabe_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="EinfInf" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Übung7" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Übung7/aufgabe_3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Übung9/aufgabe_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -263,18 +264,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.sudoku" />
-      <item itemvalue="Python.aufgabe_2" />
-      <item itemvalue="Python.aufgabe_3" />
       <item itemvalue="Python.aufgabe_1" />
       <item itemvalue="Python.spiele" />
+      <item itemvalue="Python.aufgabe_1 (1)" />
+      <item itemvalue="Python.aufgabe_3 (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.aufgabe_3 (1)" />
+        <item itemvalue="Python.aufgabe_1 (1)" />
         <item itemvalue="Python.sudoku" />
         <item itemvalue="Python.spiele" />
         <item itemvalue="Python.aufgabe_1" />
-        <item itemvalue="Python.aufgabe_3" />
-        <item itemvalue="Python.aufgabe_2" />
       </list>
     </recent_temporary>
   </component>
@@ -336,8 +337,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="36" width="1930" height="1049" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12177122" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12177122" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -549,13 +551,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Extras/Sudoku_1.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Extras/sudoku.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extras/Sudoku_1.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Übung9/aufgabe_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Übung9/aufgabe_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#16#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Übung9/aufgabe_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
         </state>
       </provider>
     </entry>
